@@ -26,6 +26,10 @@ jhucases.csv: JHU/csse_covid_19_data/csse_covid_19_time_series/time_series_19-co
 	$(copy)
 
 ######################################################################
+
+Sources += $(wildcard *.R)
+Ignore += $(wildcard *.csv)
+
 JHU_dat.Rout: jhucases.csv JHUdat.R
 	$(run-R)
 
