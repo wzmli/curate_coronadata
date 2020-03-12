@@ -10,7 +10,6 @@ Drop = ~/Dropbox
 ## Not clear whether this chains yet 2020 Mar 05 (Thu)
 
 pardirs += datarepos
-
 dr += JHU
 
 Ignore += $(dr)
@@ -18,17 +17,29 @@ $(dr):
 	cd .. && $(MAKE) datarepos/$@
 	$(LNF) ../datarepos/$@ .
 
-JHU/%: JHU
+# Added a semicolon 2020 Mar 12 (Thu). Did it help with chaining?
+JHU/%: JHU ;
 Ignore += cases.csv
 whocases.csv: JHU/who_covid_19_situation_reports/who_covid_19_sit_rep_time_series/who_covid_19_sit_rep_time_series.csv
 	$(copy)
+jhucases.csv: JHU/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv
+	$(copy)
 
 ######################################################################
-
-WHOdat.Rout: whocases.csv WHOdat.R
+JHU_dat.Rout: jhucases.csv JHUdat.R
 	$(run-R)
 
-WHOplot.Rout: WHOdat.Rout WHOplot.R
+WHO_dat.Rout: whocases.csv WHOdat.R
+	$(run-R)
+
+## WHO_clean.Rout: clean.R
+## JHU_clean.Rout: clean.R
+%_clean.Rout: %_dat.Rout clean.R
+	$(run-R)
+
+## WHO_plot.Rout: plot.R
+## JHU_plot.Rout: plot.R
+%_plot.Rout: %_clean.Rout plot.R
 	$(run-R)
 
 ######################################################################
