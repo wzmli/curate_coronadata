@@ -1,6 +1,6 @@
 library(tidyverse)
 
-dd <- read_csv(input_files[[1]])
+dd <- read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/who_covid_19_situation_reports/who_covid_19_sit_rep_time_series/who_covid_19_sit_rep_time_series.csv")
 print(names(dd))
 
 dd <- (dd
