@@ -6,11 +6,12 @@ This repository does not have any data, but has code to pull in data from differ
 ## Data source
 
 ### Time series
-Johns Hopkins
-- WHO situation reports via Johns Hopkins CSSE github : https://github.com/CSSEGISandData/COVID-19
+Johns Hopkins CSSE 
 - Time series via Johns Hopkins CSSE github : https://github.com/CSSEGISandData/COVID-19
+- WHO situation reports via Johns Hopkins CSSE github : https://github.com/CSSEGISandData/COVID-19
+
 
 ### Global Line list 
 
-
+https://docs.google.com/spreadsheets/d/1itaohdPiAeniCXNlntNztZ_oRvjh0HsGuJXUJWET008/edit#gid=0
 
