@@ -12,8 +12,6 @@ provincedat <- (dd
 	%>% ungroup()
 )
 
-print(provincedat %>% filter(Cases < 0))
-
 countrydat <- (provincedat
 	%>% group_by(Country_Region, date)
 	%>% summarise(Cumcases = sum(CumCases,na.rm=TRUE)
@@ -22,6 +20,4 @@ countrydat <- (provincedat
 )
 
 globaldat <- countrydat %>% filter(Country_Region == "Globally")
-
-
 

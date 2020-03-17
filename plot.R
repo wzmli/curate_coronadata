@@ -10,15 +10,12 @@ gg <- (ggplot(globaldat, aes(x=date, y=Cases))
 
 print(gg)
 
+
 gg2 <- (gg
-	+ geom_line(data=(countrydat %>% filter(Country_Region == "Mainland China")),color="blue", label="Mainland China")
+	+ geom_line(data=(provincedat %>% filter(Province_State == "Hubei")), color="red")
 )
 
 print(gg2)
 
-gg3 <- (gg
-	+ geom_line(data=(provincedat %>% filter(Province_State == "Hubei")), color="red")
-)
 
-print(gg3)
 

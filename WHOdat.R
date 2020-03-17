@@ -6,8 +6,9 @@ print(names(dd))
 dd <- (dd
 	%>% select(Province_State = `Province/States`
 		, Country_Region = `Country/Region`
-		, everything()
-		, -`WHO region`
+		, contains("1/")
+		, contains("2/")
+		, contains("3/")
 	)
 )
 
