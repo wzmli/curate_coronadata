@@ -17,6 +17,8 @@ JHU_dat.Rout: JHUdat.R
 WHO_dat.Rout: WHOdat.R
 	$(run-R)
 
+EuroSurv_dat.Rout: EuroSurvdat.R 
+	$(run-R)
 
 
 ## WHO_clean.Rout: clean.R

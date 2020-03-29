@@ -17,7 +17,8 @@ countrydat <- (provincedat
 	%>% summarise(Cumcases = sum(CumCases,na.rm=TRUE)
 		, Cases = sum(Cases,na.rm=TRUE)
 	)
+	%>% filter(Country_Region %in% c("United Kingdom", "Italy")) 
 )
 
-globaldat <- countrydat %>% filter(Country_Region == "Globally")
+print(countrydat,n=200)
 

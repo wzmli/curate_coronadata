@@ -3,19 +3,12 @@ library(tidyverse)
 
 
 
-gg <- (ggplot(globaldat, aes(x=date, y=Cases))
-	+ geom_line(color="black", label="Global")
+gg <- (ggplot(countrydat, aes(x=date, y=Cases,color=Country_Region))
+	+ geom_line()
 	+ scale_y_log10()
 )
 
 print(gg)
-
-
-gg2 <- (gg
-	+ geom_line(data=(provincedat %>% filter(Province_State == "Hubei")), color="red")
-)
-
-print(gg2)
 
 
 
